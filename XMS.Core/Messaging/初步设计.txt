@@ -1,0 +1,46 @@
+﻿消息机制： 整个机制可参考 57 转账服务底层的机制进行实现。
+消息表：
+	SourceIP 指示消息来自哪个IP
+	SourceAPP 指示消息来自哪个应用
+	SourceModule 指示消息来自哪个模块
+	TargetApp 指示消息应该由哪个应用进行处理
+	TargetModule 指示消息应该由应用的哪个模块进行处理
+	CreateTime 指示消息的创建时间
+	ProcessTime 指示消息的处理时间
+	Body	指示消息的内容
+消息可以按 源应用、源模块、目标应用、目标模块、消息类型 等组合进行订阅和处理
+
+历史消息表： 记录历史消息，仅供查询
+
+消息处理日志表
+	记录消息的接收、处理（多次，谁处理的、处理时间、处理结果）、关闭事件
+
+
+todo: 任务机制
+		QuartZ.net 不单纯，引用了2个其它的 dll 文件
+
+		现有任务机制应改为 QuartZ.net 这种，至少其底层线程调度机制应采用 System.Threading.Tasks 里面的实现
+todo: 任务机制优化：
+	1.任务执行时间间隔、任务描述由配置决定而不是在构造函数写死；
+	2.Windows Service 中注册任务通过配置和数组两种方式进行，现有各服务改用通过配置的方式注册任务；
+	3. <tasks>
+			<task type="" name="" description="">
+				<runmodes> 定义任务以哪几种模式运行
+					<runmode value="release">
+						<flushInterval></flushInterval>
+					</runmode>
+					<runmode value="demo">
+						<flushInterval></flushInterval>
+					</runmode>
+				</runmodes>
+			</task>
+		</tasks>
+	这样，可以通过配置在运行时调整任务的执行频率，可将 demo 下的任务执行频率调低以防止其占用资源
+
+
+
+XMS.Core.Pay.Service 功能改进，允许其非可视化运行和提高控制台宿主下的稳定性
+
+日志支持类别并按类别分类输出
+
+WCF 服务拦截，超时时不能重试（因为在超时时间设置很短的情况下，重试会造成重复提交）

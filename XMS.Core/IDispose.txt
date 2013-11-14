@@ -1,0 +1,53 @@
+﻿	public sealed class RunContext : IDisposable
+	{
+		protected void EnsureNotDisposed()
+		{
+			if (this.disposed)
+			{
+				throw new ObjectDisposedException(this.GetType().FullName);
+			}
+		}
+
+		#region IDisposable interface
+		private bool disposed = false;
+
+		public void Dispose()
+		{
+			this.CheckAndDispose(true);
+
+			GC.SuppressFinalize(this);
+		}
+
+		/// <summary>
+		/// 释放非托管资源。
+		/// </summary>
+		/// <param name="disposing"><b>true</b> 同时释放托管和非托管资源; <b>false</b> 只释放非托管资源。</param>
+		private void CheckAndDispose(bool disposing)
+		{
+			if (!this.disposed)
+			{
+				this.Dispose(disposing);
+			}
+			this.disposed = true;
+		}
+
+		/// <summary>
+		/// 释放非托管资源。
+		/// </summary>
+		/// <param name="disposing"><b>true</b> 同时释放托管和非托管资源; <b>false</b> 只释放非托管资源。</param>
+		protected virtual void Dispose(bool disposing)
+		{
+			// 释放托管资源代码
+			if (disposing)
+			{
+
+			}
+			// 释放非托管资源代码
+		}
+
+		~RunContext()
+		{
+			this.CheckAndDispose(false);
+		}
+		#endregion
+	}

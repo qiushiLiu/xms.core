@@ -1,0 +1,11 @@
+﻿Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\XiaoMiShu]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\XiaoMiShu\Messaging]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\XiaoMiShu\Messaging\Proxy]
+"EnableMTIF"=dword:00000000
+"PubPath"="D:\\工作\\Source\\XMS.Core\\Services\\XMS.Core.Messaging\\XMS.Core.Messaging.Proxy\\XMS.Core.Messaging.Proxy.Host\\bin\\Debug\\data1\\pub"
+"PubErrorPath"="D:\\工作\\Source\\XMS.Core\\Services\\XMS.Core.Messaging\\XMS.Core.Messaging.Proxy\\XMS.Core.Messaging.Proxy.Host\\bin\\Debug\\data1\\pub_error"
+

@@ -1,0 +1,18 @@
+﻿AppSettings.config
+	
+	enableInvokeChainLog 是否启用调用链机制，true 启用，false 不启用，默认值为 false。
+
+	ObjectPoolPerfCounters 以“,”分割的字符串列表，分别表示要监测的对象池性能计数器实例的名称，对于WCF客户端实例，其性能计数器实例的名称为 netTcpBinding 地址 
+	
+	SR_BalancedServices	以“,”分割的字符串列表，表示采用负载均衡调度策略的服务引用
+	SR_RetryingTimeInterval  服务重试时间间隔，00:01:00
+	SR_Log_InvokeTimeThreshold 整数，服务请求时间阙值，单位 秒，超过该值的请求将输出一条警告日志，默认值 5 秒
+
+	Services_Log_InvokeTimeThreshold 整数，服务响应时间阙值，单位 秒，超过该值的请求将输出一条警告日志，默认值 3 秒
+
+	Task_EnableTrace	启用任务跟踪机制，默认值 true
+	Task_TraceInterval  任务跟踪输出间隔，默认值 "00:01:00"
+
+app.config 或 web.config
+	Services_ThreadPool_MinSize	WCF 服务线程池最小数量
+	Services_ThreadPool_MaxSize	WCF 服务线程池最大数量

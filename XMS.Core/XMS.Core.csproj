@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3C00223-22AB-415E-86B1-E298D01E55F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XMS.Core</RootNamespace>
+    <AssemblyName>XMS.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Output\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Output\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\bin\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\bin\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching">
+      <HintPath>..\bin\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppAgent.cs" />
+    <Compile Include="ArgumentInvalidException.cs" />
+    <Compile Include="ArgumentNullOrWhiteSpaceException.cs" />
+    <Compile Include="Caching\CacheDependency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheException.cs" />
+    <Compile Include="Caching\CacheSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\CacheSettingsSection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\DefaultDistributeCacheProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\DistributeCacheElement.cs" />
+    <Compile Include="Caching\Configuration\EnableDistributeCacheElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\FailOverElement.cs" />
+    <Compile Include="Caching\Configuration\LocalCacheElement.cs" />
+    <Compile Include="Caching\Configuration\RegionElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\RegionElementCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\DistributeCacheProvider.cs" />
+    <Compile Include="Caching\DistributeCacheProviderCollection.cs" />
+    <Compile Include="Caching\ICache.cs" />
+    <Compile Include="Caching\IDistributeCache.cs" />
+    <Compile Include="Caching\Internal\DataCacheItem.cs" />
+    <Compile Include="Caching\Internal\DataCacheItemVersion.cs" />
+    <Compile Include="Caching\DefaultCacheService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\ICacheService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\IDebugableCachedItem.cs" />
+    <Compile Include="Caching\ILocalCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\LocalCacheManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Memcached\CustomBinaryNode.cs" />
+    <Compile Include="Caching\Memcached\CustomBinaryPool.cs" />
+    <Compile Include="Caching\Memcached\CustomKeyTransformer.cs" />
+    <Compile Include="Caching\Memcached\CustomMemcachedClientSection.cs" />
+    <Compile Include="Caching\Memcached\CustomMemcachedClient.cs" />
+    <Compile Include="Caching\Memcached\MemcachedDistributeCache.cs" />
+    <Compile Include="Caching\Memcached\MemcachedDistributeCacheProvider.cs" />
+    <Compile Include="Caching\CacheUtil.cs" />
+    <Compile Include="Caching\IRemoteCache.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Entity\DatabaseNotExistException.cs" />
+    <Compile Include="Entity\DataTableNotExistException.cs" />
+    <Compile Include="Entity\NotSupportCreateDataTableException.cs" />
+    <Compile Include="GIS\GeoHelper.cs" />
+    <Compile Include="IOutline.cs" />
+    <Compile Include="Security\BaseAuthorizationService.cs" />
+    <Compile Include="Security\IAuthorizationService.cs" />
+    <Compile Include="Security\UserAuthorization.cs" />
+    <Compile Include="Statistics.cs" />
+    <Compile Include="Tools\Tools.cs" />
+    <Compile Include="WCF\Client\ServiceFactory.cs" />
+    <Compile Include="WCF\Client\SyncList.cs" />
+    <Compile Include="WCF\Server\OperationContextHelper.cs" />
+    <Compile Include="CLRExtentd\PrimitiveExtend.cs" />
+    <Compile Include="ErrorCode.cs" />
+    <Compile Include="BusinessException.cs" />
+    <Compile Include="Business\ManagerBase.cs" />
+    <Compile Include="Business\SortDirection.cs" />
+    <Compile Include="Calendar\DefaultCalendarService.cs" />
+    <Compile Include="Calendar\ICalendarService.cs" />
+    <Compile Include="Calendar\LunarCalendar.cs" />
+    <Compile Include="Calendar\LunarDate.cs" />
+    <Compile Include="CLRExtentd\AppDomainExtend.cs" />
+    <Compile Include="CLRExtentd\ExceptionExtend.cs" />
+    <Compile Include="CLRExtentd\ObjectExtend.cs" />
+    <Compile Include="CLRExtentd\Web\RequestExtend.cs" />
+    <Compile Include="Configuration\ConfigFileChangedEventHandler.cs" />
+    <Compile Include="Configuration\DefaultConfigService.cs" />
+    <Compile Include="Configuration\IConfigService.cs" />
+    <Compile Include="Configuration\ServiceModel\IRemoteConfigService.cs" />
+    <Compile Include="Configuration\ServiceModel\RemoteConfigFile.cs" />
+    <Compile Include="Container.cs" />
+    <Compile Include="ContainerException.cs" />
+    <Compile Include="Dictionary\DataModel\DictionaryData.cs" />
+    <Compile Include="Dictionary\DataModel\DictionaryDataItemCollection.cs" />
+    <Compile Include="Dictionary\DefaultDictionaryService.cs" />
+    <Compile Include="Dictionary\Dictionary.cs" />
+    <Compile Include="Dictionary\DataModel\DictionaryDataItem.cs" />
+    <Compile Include="Dictionary\DictionaryItem.cs" />
+    <Compile Include="Dictionary\DictionaryItemCollection.cs" />
+    <Compile Include="Dictionary\IDictionaryService.cs" />
+    <Compile Include="Dictionary\ServiceModel\RemoteDictionary.cs" />
+    <Compile Include="Dictionary\ServiceModel\RemoteDictionaryItem.cs" />
+    <Compile Include="Dictionary\ServiceModel\IRemoteDictionaryService.cs" />
+    <Compile Include="Empty.cs" />
+    <Compile Include="Entity\DataTableAdapter.cs" />
+    <Compile Include="Entity\DynamicLibrary.cs" />
+    <Compile Include="Entity\EntityContext.cs" />
+    <Compile Include="Exception\IExceptionHandlerService.cs" />
+    <Compile Include="Formatter\IObjectFormatter.cs" />
+    <Compile Include="InternalUtil\TimeoutHelper.cs" />
+    <Compile Include="InvokeChain.cs" />
+    <Compile Include="Json\JsonUtil.cs" />
+    <Compile Include="Json\JsonPropertyAttribute.cs" />
+    <Compile Include="Json\JsonSerializer.cs" />
+    <Compile Include="Json\Reflection\AtlasWeb.cs" />
+    <Compile Include="Json\Internal\JavaScriptConverter.cs" />
+    <Compile Include="Json\Internal\JavaScriptObjectDeserializer.cs" />
+    <Compile Include="Json\Internal\JavaScriptSerializer.cs" />
+    <Compile Include="Json\Internal\JavaScriptString.cs" />
+    <Compile Include="Json\Internal\JavaScriptTypeResolver.cs" />
+    <Compile Include="Json\Internal\ObjectConverter.cs" />
+    <Compile Include="Json\Reflection\SecurityUtils.cs" />
+    <Compile Include="Json\JsonIgnoreAttribute.cs" />
+    <Compile Include="Json\Internal\SimpleTypeResolver.cs" />
+    <Compile Include="KeyValue.cs" />
+    <Compile Include="Logging\BaseLogger.cs" />
+    <Compile Include="Logging\DefaultLogger.cs" />
+    <Compile Include="Logging\ILogService.cs" />
+    <Compile Include="Logging\IntervalExceptionLogger.cs" />
+    <Compile Include="Logging\Log4netExtension\CustomBufferAppender.cs" />
+    <Compile Include="Logging\Log4netExtension\CustomFileAppender.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logging\Log4netExtension\CustomLayout.cs" />
+    <Compile Include="Logging\Log4netExtension\CustomLogManager.cs" />
+    <Compile Include="Logging\Log4netExtension\CustomRepositorySelector.cs" />
+    <Compile Include="Logging\Log4netExtension\DefaultCustomLog.cs" />
+    <Compile Include="Logging\Log4netExtension\IAppenderEnable.cs" />
+    <Compile Include="Logging\Log4netExtension\ICustomLog.cs" />
+    <Compile Include="Logging\Log4netExtension\LogCenterAppender.cs" />
+    <Compile Include="Logging\LogCategory.cs" />
+    <Compile Include="Logging\LoggerInstaller.cs" />
+    <Compile Include="Logging\DefaultLogService.cs" />
+    <Compile Include="Logging\LogUtil.cs" />
+    <Compile Include="Logging\ServiceModel\ILogCenterService.cs" />
+    <Compile Include="Logging\LogSystemLogService.cs" />
+    <Compile Include="Members\IMemberService.cs" />
+    <Compile Include="Members\Member.cs" />
+    <Compile Include="Messaging\IMessageContext.cs" />
+    <Compile Include="Messaging\IMessageInfo.cs" />
+    <Compile Include="Messaging\Impl\FileMessageContext.cs" />
+    <Compile Include="Messaging\Impl\MessageContext.cs" />
+    <Compile Include="Messaging\Impl\MessageInfo.cs" />
+    <Compile Include="Messaging\Impl\PipeMessageContext.cs" />
+    <Compile Include="Messaging\MessageBus.cs" />
+    <Compile Include="Messaging\IMessage.cs" />
+    <Compile Include="Messaging\IMessageHandler.cs" />
+    <Compile Include="Messaging\MessageAttribute.cs" />
+    <Compile Include="Messaging\MessageBusException.cs" />
+    <Compile Include="Messaging\ServiceModel\Message.cs" />
+    <Compile Include="Messaging\MessageProxyException.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="Pipes\BinarySerializeHelper.cs" />
+    <Compile Include="Pipes\Constant.cs" />
+    <Compile Include="Pipes\Events.cs" />
+    <Compile Include="Pipes\PipeServiceChannelManager.cs" />
+    <Compile Include="Pipes\PipeServiceChannel.cs" />
+    <Compile Include="Pipes\PipeService.cs" />
+    <Compile Include="Pipes\PipeServiceClient.cs" />
+    <Compile Include="Pipes\PipeServiceClientCollection.cs" />
+    <Compile Include="Pipes\PipeServiceListener.cs" />
+    <Compile Include="Pipes\PipeServiceClientChannel.cs" />
+    <Compile Include="Pipes\ReplyException.cs" />
+    <Compile Include="Pipes\TimeoutNamedPipeServerStream.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryResult.cs" />
+    <Compile Include="RequestException.cs" />
+    <Compile Include="Resource\DefaultResourceService.cs" />
+    <Compile Include="ReturnValue.cs" />
+    <Compile Include="RunContext.cs" />
+    <Compile Include="SecurityContext.cs" />
+    <Compile Include="SerialNumber\DefaultSerialNumberGenerator.cs" />
+    <Compile Include="SerialNumber\Example.cs" />
+    <Compile Include="SerialNumber\ISerialNumberGenerator.cs" />
+    <Compile Include="SerialNumber\SerialNumberGeneratorManager.cs" />
+    <Compile Include="SerialNumber\SerialNumberSeed.cs" />
+    <Compile Include="StringTemplates\StringTemplate.cs" />
+    <Compile Include="StringTemplates\TemplateNode.cs" />
+    <Compile Include="StringTemplates\TextNode.cs" />
+    <Compile Include="StringTemplates\BindNode.cs" />
+    <Compile Include="TypeHelper.cs" />
+    <Compile Include="Tasks\TaskManager.cs" />
+    <Compile Include="Triplet.cs" />
+    <Compile Include="WCF\Client\ClientBase\ChainedAsyncResult.cs" />
+    <Compile Include="WCF\Client\ClientBase\ChannelFactoryRef.cs" />
+    <Compile Include="WCF\Client\ClientBase\ChannelFactoryRefCache.cs" />
+    <Compile Include="WCF\Client\ClientBase\ClientBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WCF\Client\ClientBase\CompletedAsyncResult.cs" />
+    <Compile Include="WCF\Client\EndPointTrace.cs" />
+    <Compile Include="WCF\Client\ClientBase\EndpointTrait.cs" />
+    <Compile Include="WCF\Client\ClientBase\Fx.cs" />
+    <Compile Include="WCF\Client\ClientBase\MRUCache.cs" />
+    <None Include="Messaging\MessageBus.reg" />
+    <Compile Include="WCF\Client\ClientChannelCacheMode.cs" />
+    <Compile Include="WCF\Client\Configuration\ServiceReferenceElement.cs" />
+    <Compile Include="WCF\Client\Configuration\ServiceReferenceElementCollection.cs" />
+    <Compile Include="WCF\Client\Configuration\ServiceReferencesSection.cs" />
+    <None Include="WCF\Client\DiscoveryHelper.cs" />
+    <None Include="WCF\Client\DynamicProxy\WCFAbstractInvocation.cs" />
+    <None Include="WCF\Client\DynamicProxy\WCFCompositionInvocation.cs" />
+    <None Include="WCF\Client\DynamicProxy\WCFCompositionInvocationTypeGenerator.cs" />
+    <None Include="WCF\Client\DynamicProxy\WCFInterfaceProxyWithTargetInterfaceGenerator.cs" />
+    <None Include="WCF\Client\DynamicProxy\WCFInterfaceProxyWithTargetInterfaceTargetContributor.cs" />
+    <None Include="WCF\Client\DynamicProxy\WCFInvocation.cs" />
+    <None Include="WCF\Client\DynamicProxy\WCFProxyBuilder.cs" />
+    <Compile Include="WCF\Client\PerWebRequestServiceCacheModule.cs" />
+    <Compile Include="WCF\Client\ConcentratedConfigServiceClient.cs" />
+    <None Include="WCF\Client\SynchronizedQueue.cs" />
+    <Compile Include="WCF\Extension\CustomHeader\AppAgentHeader.cs" />
+    <Compile Include="WCF\Extension\CustomHeader\AuthorizationTicketHeader.cs" />
+    <Compile Include="WCF\Extension\CustomHeader\CustomHeaderBehaviorExtensionElement.cs" />
+    <Compile Include="WCF\Extension\CustomHeader\CustomHeaderBehavior.cs" />
+    <Compile Include="WCF\Extension\CustomHeader\CustomHeaderClientMessageInspector.cs" />
+    <Compile Include="WCF\Extension\CustomHeader\DemoHeader.cs" />
+    <Compile Include="WCF\Extension\CustomHeader\ICustomHeader.cs" />
+    <Compile Include="WCF\Extension\CustomHeader\InvokeChainHeader.cs" />
+    <Compile Include="WCF\Extension\CustomHeader\UserIPHeader.cs" />
+    <Compile Include="Formatter\ObjectFormatter.cs" />
+    <Compile Include="Formatter\PlainObjectFormatter.cs" />
+    <Compile Include="WCF\Server\Interceptors\IOCBehavior.cs" />
+    <Compile Include="WCF\Server\ManageableServiceHostManager.cs" />
+    <Compile Include="WCF\Server\ManageableWebServiceHostFactory.cs" />
+    <Compile Include="WCF\Server\ManageableWebServiceHost.cs" />
+    <Compile Include="WCF\Server\ManageableWindowsServiceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WCF\Server\ManageableServiceHost.cs" />
+    <Compile Include="WCF\Server\IOCBehaviorSection.cs" />
+    <Compile Include="WCF\Server\IOCInstanceProvider.cs" />
+    <Compile Include="WCF\Server\Interceptors\OperationInterceptorBehavior.cs" />
+    <Compile Include="WCF\Server\Interceptors\OperationInterceptor.cs" />
+    <Compile Include="WCF\Server\ServiceBase.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="WCF\Server\Interceptors\ServiceInterceptorBehavior.cs" />
+    <Compile Include="Formatter\TypeFormatter.cs" />
+    <Compile Include="StringInterceptAttribute.cs" />
+    <Compile Include="StringInterceptor.cs" />
+    <Compile Include="WCF\Server\ContentTypeMappers.cs" />
+    <Compile Include="WCF\Server\WebHttpBindingHelper.cs" />
+    <Compile Include="WCF\SyncContext\SyncContext.cs" />
+    <Compile Include="WCF\SyncContext\WorkItem.cs" />
+    <Compile Include="WCF\SyncContext\WorkThread.cs" />
+    <Compile Include="Business\AppSettingHelper.cs" />
+    <Compile Include="Resource\IResourceService.cs" />
+    <Compile Include="CLRExtentd\StringExtend.cs" />
+    <Compile Include="ObjectPool.cs" />
+    <None Include="Caching\AppFabric\Cache.config" />
+    <None Include="Caching\AppFabric\CacheDependency.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\CacheSettings.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\Configuration\CacheElement.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\Configuration\CacheElementCollection.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\Configuration\CacheSettingsSection.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\Configuration\DefaultCacheElement.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\Configuration\EnableDistributeCacheElement.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\Configuration\FailOverElement.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\Configuration\RegionElement.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\Configuration\RegionElementCollection.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\DefaultCacheService.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\DistributeCache.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\ICacheService.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\LocalCache.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Caching\AppFabric\LocalCacheManager.cs">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="配置参考\conf\ErrorCodes.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IDispose.txt" />
+    <Content Include="Messaging\初步设计.txt" />
+    <Content Include="Readme.txt" />
+    <Content Include="WCF\Server\Readme.txt" />
+    <None Include="配置参考\配置项列表.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="container.core.config">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="配置参考\app.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="配置参考\conf\AppSettings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="配置参考\conf\Cache.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="配置参考\Castle 配置参考.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="配置参考\Web.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="配置参考\conf\ConnectionStrings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="配置参考\conf\ServiceReferences.Config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="配置参考\conf\Services.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="配置参考\conf\log.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="配置参考\conf\log4Console.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
