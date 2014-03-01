@@ -157,11 +157,6 @@
     <Compile Include="ErrorCode.cs" />
     <Compile Include="BusinessException.cs" />
     <Compile Include="Business\ManagerBase.cs" />
-    <Compile Include="Business\SortDirection.cs" />
-    <Compile Include="Calendar\DefaultCalendarService.cs" />
-    <Compile Include="Calendar\ICalendarService.cs" />
-    <Compile Include="Calendar\LunarCalendar.cs" />
-    <Compile Include="Calendar\LunarDate.cs" />
     <Compile Include="CLRExtentd\AppDomainExtend.cs" />
     <Compile Include="CLRExtentd\ExceptionExtend.cs" />
     <Compile Include="CLRExtentd\ObjectExtend.cs" />
@@ -227,8 +222,6 @@
     <Compile Include="Logging\LogUtil.cs" />
     <Compile Include="Logging\ServiceModel\ILogCenterService.cs" />
     <Compile Include="Logging\LogSystemLogService.cs" />
-    <Compile Include="Members\IMemberService.cs" />
-    <Compile Include="Members\Member.cs" />
     <Compile Include="Messaging\IMessageContext.cs" />
     <Compile Include="Messaging\IMessageInfo.cs" />
     <Compile Include="Messaging\Impl\FileMessageContext.cs" />
@@ -390,6 +383,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BaseDll\Castle.Core.dll" />
+    <Content Include="BaseDll\Castle.Windsor.dll" />
+    <Content Include="BaseDll\EntityFramework.dll" />
+    <Content Include="BaseDll\Enyim.Caching.dll" />
+    <Content Include="BaseDll\log4net.dll" />
     <Content Include="IDispose.txt" />
     <Content Include="Messaging\初步设计.txt" />
     <Content Include="Readme.txt" />

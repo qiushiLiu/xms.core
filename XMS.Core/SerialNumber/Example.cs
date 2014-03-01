@@ -8,7 +8,6 @@ using System.ComponentModel.DataAnnotations;
 using XMS.Core;
 using XMS.Core.Caching;
 using XMS.Core.Entity;
-using XMS.Core.Members;
 
 namespace XMS.Core.SerialNumber
 {
